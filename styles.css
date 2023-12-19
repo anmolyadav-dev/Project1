@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "General Sans";
+    text-decoration: none;
+    color: #fff;
+    
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "General Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("assets/fonts/GeneralSans-Medium.otf")
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "General Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("assets/fonts/GeneralSans-Regular.otf")
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    
+}
+
+/* ................................................................... */
+#minicircle{
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    
+    position: absolute;
+    background-color: #fff;
+    z-index: 9999;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) ;
+    opacity: 0;
+}
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+    
+
+}
+.bounding .boundingElem{
+    transform: translateY(100%);
+}
+
+#main{
+    width: 100%;
+
+}
+#hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    color: white;
+
+}
+#nav{
+    /* position: sticky;
+    top:0%; */
+    width: 100%;
+    padding: 27px 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: black;  */
+}
+#nav h4{
+    
+    font-weight: 500;
+}
+#nav a{
+    
+    color: white;
+    font-weight: 500;
+    
+}
+
+#heading h1{
+    text-transform: uppercase;
+    font-size: 10vw;
+    line-height: 1;
+    opacity: 0.6;
+    font-weight: 500;
+    margin-left: 30px;
+    margin-top: -10PX;
+
+}
+#heading {
+    margin-top: 90px;
+}
+#heading #secondh1{
+   margin-left: 230px;
+}
+
+.block{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.block h5{
+    text-align: right;
+    font-size: 1vw;
+    text-transform: uppercase;
+    opacity: 0.9;
+    
+}
+#chotiheadings {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 100px;
+    padding-right: 59px;
+    
+}
+#chotiheadings h5{
+    text-transform: uppercase;
+    margin-top: .5vw;
+    text-align: right;
+    font-size: 1vw;
+    opacity: 0.9;
+}
+#herofooter{
+    width: 100%;
+    position: absolute;
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vw;
+    
+}
+
+#herofooter a{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+#iconSet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding-right:  2vw;
+}
+#herofooter .circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #888;
+
+    cursor: pointer;
+    
+}
+
+/* SECOND PAGE STYLING */
+
+#second{
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    padding: 200px 10vw 0vw 2vw;
+   
+}
+.elem{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    
+    border-top: 1px solid #888;
+}
+.elem h1{
+    text-transform: uppercase;
+    font-size: 7.5vw;
+    font-weight: 500;
+    opacity: 0.65;
+}
+.lastelem{
+    padding-bottom: 3vw;
+    border-bottom: 1px solid #888;
+}
+.elem img{
+    /* opacity: 0; */
+    display: none;
+    height: 150% ;
+    z-index: 999;
+    position: absolute; 
+}
+
+#about{
+    
+    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 20vw 15vw;
+    padding-left: 20vw;
+    color: #fff;
+    
+}
+#about img{
+    width: 25vw;
+    
+}
+
+#textAbout h5{
+    opacity: 0.7;
+    font-weight: 500;
+    
+}
+#textAbout p{
+    font-size: 1.15em;
+    line-height: 1.5em;
+    margin-bottom: 30px;
+    
+}
+#textAbout a{
+    border: #888 solid 1px;
+    padding: 12px 22px;
+    border-radius: 100px;
+    color: #fff;
+}
+#subscribe{
+    margin-top: -150px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    line-height: 1.75;
+    padding:50px;
+    padding-bottom: 10vw;
+
+}
+#subscribe h5{
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+.footerLeft{
+    display: flex;
+    text-align: center;
+}
+.footerLeft p{
+    text-transform: uppercase;
+    font-weight: 500px;
+    padding-right: 3vw;
+
+}
+#footer{
+    display: flex;
+    justify-content: space-between;
+    
+    font-weight: 500;
+    padding: 25px 50px;
+}
+.footerRight a{
+    text-transform: uppercase;
+    padding-left: 3vw;
+}
