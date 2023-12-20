@@ -32,47 +32,57 @@ function firstPageAnimation(){
 
 }
 
-
-//jab mouse move ho to hum log circle compress kar paye ormaximum compression and minimum comporession define kar paay.................jab mouse move ho to top n bottom compress ho jaye and left right inc and jab mouse chalna band kar jaye to mouse vapus wesa hi hojaye
-
-function circleCompress(){
-  var xscale = 1 , yscale = 1;
-  var xprev =0;
-  var yprev = 0;
-  var timeout;
-  window.addEventListener('mousemove',function(dets){
-    clearTimeout(timeout);
-    xscale = gsap.utils.clamp(0.85,1.15, dets.clientX - xprev/10);
-    yscale = gsap.utils.clamp(0.85,1.15,dets.clientY- yprev/10);
-
-      xprev = dets.clientX;
-      yprev = dets.clientY;
-
-      circleMouseFollower(xscale,yscale);
-     
-      timeout = setTimeout(() => {
-        document.querySelector("#minicircle").style.transform = `translate(-50%,-50%) scale(1,1)`
-      }, 100);
-
-  })
-}
-
-circleCompress();
-
-function circleMouseFollower (xscale,yscale){
-  const minicircle = this.document.querySelector("#minicircle");
+//selecting minicircle
+const minicircle = document.getElementById("minicircle");
+// checking when mouse leaves 
+document.addEventListener('mouseleave',()=>{
   
+  minicircle.style.opacity = "0";
+});
 
-    
-    window.addEventListener('mousemove',function(dets){
-      minicircle.style.opacity = '1';
-      
-        minicircle.style.left = `${dets.clientX}px `;
-        minicircle.style.top =  `${dets.clientY}px`;
-        minicircle.style.transform = `translate(-50%,-50%) scale(${xscale} , ${yscale})`;
-    })
-    // translate(${dets.clientX}px , ${dets.clientY }px)
-}
+
+
+// .......................................................................................
+let xprev = 0;
+let yprev = 0;
+let timeout;
+let xscale =1 , yscale =1 ;
+
+window.addEventListener("mousemove",function(dets){
+ 
+  
+  let circleMouseFollower = ()=>{
+    if(minicircle.style.transform===0 )  minicircle.style.transform = `scale(1)`;
+    minicircle.style.opacity = "1";
+    xloc = dets.x;
+    yloc = dets.y;
+
+    minicircle.style.left = `${xloc}px`;
+    minicircle.style.top = `${yloc}px`;
+
+
+    // circle compress during movement
+    this.clearTimeout(timeout);
+    xscale = gsap.utils.clamp(0.8 , 1.2 , xloc - xprev);
+    yscale = gsap.utils.clamp(0.8 , 1.2 , yloc - yprev);
+    xprev = xloc;
+    yprev = yloc;
+    minicircle.style.transform = `translate(-50%,-50%) scale(${xscale} , ${yscale})`;
+
+    // after stopping the cursor getting circle again
+
+    timeout = setTimeout(() => {
+      minicircle.style.transform = `translate(-50%,-50%) scale(1)`;
+    }, 100);
+
+   
+     
+
+  }
+  circleMouseFollower();
+
+
+})
+
 
 firstPageAnimation();
-circleMouseFollower(); 
