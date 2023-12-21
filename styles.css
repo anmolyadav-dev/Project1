@@ -40,7 +40,7 @@ html,body{
     position: fixed;
     background-color: #fff;
     z-index: 9999;
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) ;
+    
     /* opacity: 0; */
     transform: translate(-50%,-50%) scale(0);
     
@@ -192,8 +192,9 @@ html,body{
     width: 100%;
     padding-top: 3vw;
     padding-bottom: 3vw;
-    
+    position: relative;
     border-top: 1px solid #888;
+
 }
 .elem h1{
     
@@ -201,7 +202,15 @@ html,body{
     font-size: 7.5vw;
     font-weight: 500;
     opacity: 0.65;
+    transition: all 0.5s ease-in-out;
+    
 }
+.elem:hover h1{
+    padding-left: 40px;
+    opacity: 0.3;
+    
+}
+
 .lastelem{
     padding-bottom: 3vw;
     border-bottom: 1px solid #888;
@@ -209,12 +218,13 @@ html,body{
 
 }
 .elem img{
-    /* opacity: 0; */
-    
-    display: none;
+    opacity: 0;
     height: 150% ;
     z-index: 999;
     position: absolute; 
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+
 }
 
 #about{
